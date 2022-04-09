@@ -1,0 +1,65 @@
+{
+  "name": "jay7x-vaultbot",
+  "version": "0.1.0",
+  "author": "Yury Bushmelev",
+  "summary": "Puppet module to manage Vaultbot (https://gitlab.com/msvechla/vaultbot)",
+  "license": "Apache-2.0",
+  "source": "https://github.com/jay7x/puppet-vaultbot.git",
+  "project_page": "https://github.com/jay7x/puppet-vaultbot",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 4.24.0 < 7.0.0"
+    },
+    {
+      "name": "puppet-archive",
+      "version_requirement": ">= 2.0.0 < 5.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "10",
+        "11"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "18.04",
+        "20.04"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 6.0.0 < 8.0.0"
+    }
+  ],
+  "issues": "https://github.com/jay7x/puppet-vaultbot/issues",
+  "pdk-version": "2.5.0",
+  "template-url": "pdk-default#2.5.0",
+  "template-ref": "tags/2.5.0-0-g369d483"
+}

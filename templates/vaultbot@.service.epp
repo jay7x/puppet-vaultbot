@@ -1,0 +1,14 @@
+<%- |
+  Stdlib::AbsolutePath $etc_dir,
+  String[1] $exec_start,
+  String[1] $syslog_identifier,
+| -%>
+[Unit]
+Description=Vaultbot cert renewal - %i
+
+[Service]
+EnvironmentFile=-<%= $etc_dir %>/vaultbot.conf
+EnvironmentFile=-<%= $etc_dir %>/vaultbot-%i.conf
+SyslogIdentifier=<%= $syslog_identifier %>
+Type=oneshot
+ExecStart=<%= $exec_start %>

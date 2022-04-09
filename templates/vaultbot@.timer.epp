@@ -1,0 +1,21 @@
+<%- |
+  String[1] $on_calendar,
+  String $on_boot_sec = '',
+  String $randomized_delay_sec = '',
+| -%>
+[Unit]
+Description=Run vaultbot@%i
+Requires=vaultbot@%i.service
+
+[Timer]
+OnCalendar=<%= $on_calendar %>
+<% unless empty($on_boot_sec) { -%>
+OnBootSec=<%= $on_boot_sec %>
+<% } -%>
+<% unless empty($randomized_delay_sec) { -%>
+RandomizedDelaySec=<%= $randomized_delay_sec %>
+<% } -%>
+Persistent=true
+
+[Install]
+WantedBy=timers.target
