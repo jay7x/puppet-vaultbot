@@ -1,11 +1,5 @@
 # vaultbot
 
-Welcome to your new module. A short overview of the generated parts can be found
-in the [PDK documentation][1].
-
-The README template below provides a starting point with details about what
-information to include in your README.
-
 ## Table of Contents
 
 1. [Description](#description)
@@ -19,99 +13,48 @@ information to include in your README.
 
 ## Description
 
-Briefly tell users why they might want to use your module. Explain what your
-module does and what kind of problems users can solve with it.
-
-This should be a fairly short description helps the user decide if your module
-is what they want.
+Puppet module to install and configure [vaultbot](https://gitlab.com/msvechla/vaultbot/).
 
 ## Setup
 
-### What vaultbot affects **OPTIONAL**
+### What vaultbot affects
 
-If it's obvious what your module touches, you can skip this section. For
-example, folks can probably figure out that your mysql_instance module affects
-their MySQL instances.
+* vaultbot binary
+* vaultbot configuration files
+* vaultbot timer and service
 
-If there's more that they should know about, though, this is the place to
-mention:
+### Setup Requirements
 
-* Files, packages, services, or operations that the module will alter, impact,
-  or execute.
-* Dependencies that your module automatically installs.
-* Warnings or other important notices.
-
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled,
-another module, etc.), mention it here.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you might want to include an additional "Upgrading" section here.
+Please review [metadata.json](metadata.json) for a list of requirements.
 
 ### Beginning with vaultbot
 
-The very basic steps needed for a user to get the module up and running. This
-can include setup steps, if necessary, or it can be an example of the most basic
-use of the module.
+Use the `vaultbot::bundle` defined resource to configure certificate bundles you'd like to manage.
 
 ## Usage
 
-Include usage examples for common use cases in the **Usage** section. Show your
-users how to use your module to solve problems, and be sure to include code
-examples. Include three to five examples of the most important or common tasks a
-user can accomplish with your module. Show users how to accomplish more complex
-tasks that involve different types, classes, and functions working in tandem.
+TBD
 
 ## Reference
 
-This section is deprecated. Instead, add reference information to your code as
-Puppet Strings comments, and then use Strings to generate a REFERENCE.md in your
-module. For details on how to add code comments and generate documentation with
-Strings, see the [Puppet Strings documentation][2] and [style guide][3].
-
-If you aren't ready to use Strings yet, manually create a REFERENCE.md in the
-root of your module directory and list out each of your module's classes,
-defined types, facts, functions, Puppet tasks, task plans, and resource types
-and providers, along with the parameters for each.
-
-For each element (class, defined type, function, and so on), list:
-
-* The data type, if applicable.
-* A description of what the element does.
-* Valid values, if the data type doesn't make it obvious.
-* Default value, if any.
-
-For example:
-
-```
-### `pet::cat`
-
-#### Parameters
-
-##### `meow`
-
-Enables vocalization in your cat. Valid options: 'string'.
-
-Default: 'medium-loud'.
-```
+Reference documentation for the module is generated using
+[puppet-strings](https://puppet.com/docs/puppet/latest/puppet_strings.html) and
+available in [REFERENCE.md](REFERENCE.md)
 
 ## Limitations
 
-In the Limitations section, list any incompatibilities, known issues, or other
-warnings.
+The module has been built on and tested against Puppet 6 and higher.
+
+The module has been tested on:
+
+* Debian 11
+* Ubuntu 20.04
 
 ## Development
 
-In the Development section, tell other users the ground rules for contributing
-to your project and how they should submit their work.
+Please contribute to the module on GitHub: <https://github.com/jay7x/puppet-vaultbot>.
 
-## Release Notes/Contributors/Etc. **Optional**
+## Copyright and License
 
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You can also add any additional sections you feel are
-necessary or important to include here. Please use the `##` header.
-
-[1]: https://puppet.com/docs/pdk/latest/pdk_generating_modules.html
-[2]: https://puppet.com/docs/puppet/latest/puppet_strings.html
-[3]: https://puppet.com/docs/puppet/latest/puppet_strings_style.html
+This module is distributed under the [Apache License 2.0](LICENSE).  Copyright belongs to the module's authors, including Yury Bushmelev and
+[others](https://github.com/jay7x/puppet-vaultbot/graphs/contributors).

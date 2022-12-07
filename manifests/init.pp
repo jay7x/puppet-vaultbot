@@ -13,48 +13,44 @@
 # @param version
 #   The vaultbot version to install.
 # @param ensure
-#   This specifies whether to install vaultbot. Should be one of [present, absent]. Defaults to 'present'.
-
+#   This specifies whether to install vaultbot. Should be one of [present, absent].
 # @param install_method
 #   This sets the installation method. Only 'archive' method is supported at the moment.
 # @param download_url
-#   URL template to download the vaultbot release from. This is inline_epp()-processed template with the following variables
-#   availabe:
-#     version - See `version` parameter
-#     os      - OS kernel (windows/linux/darwin)
-#     arch    - Machine architecture (amd64/arm64)
-#     download_extension - See `download_extension` parameter
-#   Defaults to the vaultbot Gitlab release archive.
+#   URL template to download the vaultbot release from. This is `inline_epp()`-processed template with the following variables
+#   available:
+#     - version: See `version` parameter
+#     - os: OS kernel (windows/linux/darwin)
+#     - arch: Machine architecture (amd64/arm64)
+#     - download_extension: See `download_extension` parameter
 # @param download_extension
 #   Extension of the archive to download. This determines extractor indirectly.
 # @param checksum_verify
 #   If set to 'true', checksum of the archive downloaded will be verified.
 # @param checksum_url
-#   URL of a file containing the archive checksums. Defaults to the vaultbot Gitlab release checksum file.
+#   URL of a file containing the archive checksums.
 # @param binary_name
-#   Name of vaultbot binary to install into. Defaults to 'vaultbot'.
+#   Name of vaultbot binary to install into.
 # @param bin_dir
-#   Path to install vaultbot into. Defaults to '/usr/local/bin'.
+#   Path to install vaultbot into.
 # @param archives_top_dir
-#   Path to store downloaded archive into. Defaults to '/opt/vaultbot'.
+#   Path to store downloaded archive into.
 # @param etc_dir
-#   Path to store vaultbot configs into. Defaults to '/etc/vaultbot'.
+#   Path to store vaultbot configs into.
 # @param proxy_url
 #   If set, use the URL as a HTTP proxy to use when downloading files.
 # @param service_manage
-#   If set to `true`, manage the vaultbot timer and service. Set to `true` by default.
+#   If set to `true`, manage the vaultbot timer and service.
 # @param on_calendar
-#   Systemd timer `OnCalendar` value. This defines when to run the vaultbot service. Defaults to 'daily'.
+#   Systemd timer `OnCalendar` value. This defines when to run the vaultbot service.
 # @param on_boot_sec
 #   Systemd timer `OnBootSec` value. This defines how long to wait before starting the vaultbot service after system reboot.
-#   Defaults to '15min'.
 # @param randomized_delay_sec
-#   Systemd timer `RandomizedDelaySec` value. This defines a random delay before starting the service from the timer. Default is
-#   '15min'.
+#   Systemd timer `RandomizedDelaySec` value. This defines a random delay before starting the service from the timer.
 # @param exec_start
-#   Systemd service `ExecStart` value. Defaults to '`bin_dir`/`binary_name`'.
+#   Systemd service `ExecStart` value.
 # @param syslog_identifier
-#   Systend service `SyslogIdentifier` value. Defaults to 'vaultbot-%i' (%i is vaultbot::bundle resource title usually).
+#   Systemd service `SyslogIdentifier` value.
 # @param auto_confirm
 #   If set to `true`, user prompts will be auto confirmed with yes.
 # @param vault_addr
@@ -82,9 +78,9 @@
 # @param vault_renew_token
 #   If set, vaultbot tries to automatically renew the current token.
 # @param vault_auth_method
-#   The method used to authenitcate to vault. Should be one of [agent, cert, approle, token, aws-iam, aws-ec2, gcp-gce, gcp-iam].
+#   The method used to authenticate to vault. Should be one of [agent, cert, approle, token, aws-iam, aws-ec2, gcp-gce, gcp-iam].
 # @param vault_certificate_role
-#   The certificate role to authenticate against, when using the cert auth mehtod.
+#   The certificate role to authenticate against, when using the cert auth method.
 # @param vault_aws_auth_role
 #   The role to use for AWS IAM authentication.
 # @param vault_aws_auth_mount
@@ -98,7 +94,7 @@
 # @param vault_gcp_auth_role
 #   The role to use for GCP authentication.
 # @param vault_gcp_auth_service_account_email
-#   The service account email to use for GCP IAM authentiation.
+#   The service account email to use for GCP IAM authentication.
 # @param vault_gcp_auth_mount
 #   The mount path for the vault GCP auth method (default: gcp).
 # @param vault_app_role_mount

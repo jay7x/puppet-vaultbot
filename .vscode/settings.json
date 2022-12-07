@@ -1,0 +1,17 @@
+{
+    "cSpell.enableFiletypes": [
+        "puppet"
+    ],
+    "cSpell.words": [
+        "Absolutepath",
+        "approle",
+        "cachain",
+        "capath",
+        "logfile",
+        "pembundle",
+        "pkcs",
+        "privkey",
+        "Stdlib",
+        "vaultbot"
+    ]
+}

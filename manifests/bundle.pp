@@ -6,13 +6,13 @@
 # @see https://gitlab.com/msvechla/vaultbot
 #
 # @param ensure
-#   This specifies whether to create the bundle. Should be one of [present, absent]. Defaults to 'present'.
+#   This specifies whether to create the bundle. Should be one of [present, absent].
 # @param bundle_name
 #   This sets the certificate bundle name.
 # @param logfile
 #   Path to the vaultbot logfile. Defaults to stdout.
 # @param renew_hook
-#   Command to execute after certificate has beed updated.
+#   Command to execute after certificate has been updated.
 # @param auto_confirm
 #   If set to `true`, user prompts will be auto confirmed with yes.
 # @param vault_addr
@@ -40,9 +40,9 @@
 # @param vault_renew_token
 #   If set to `true`, vaultbot tries to automatically renew the current token.
 # @param vault_auth_method
-#   The method used to authenitcate to vault. Should be one of [agent, cert, approle, token, aws-iam, aws-ec2, gcp-gce, gcp-iam].
+#   The method used to authenticate to vault. Should be one of [agent, cert, approle, token, aws-iam, aws-ec2, gcp-gce, gcp-iam].
 # @param vault_certificate_role
-#   The certificate role to authenticate against, when using the cert auth mehtod.
+#   The certificate role to authenticate against, when using the cert auth method.
 # @param vault_aws_auth_role
 #   The role to use for AWS IAM authentication.
 # @param vault_aws_auth_mount
@@ -56,7 +56,7 @@
 # @param vault_gcp_auth_role
 #   The role to use for GCP authentication.
 # @param vault_gcp_auth_service_account_email
-#   The service account email to use for GCP IAM authentiation.
+#   The service account email to use for GCP IAM authentication.
 # @param vault_gcp_auth_mount
 #   The mount path for the vault GCP auth method (default: gcp).
 # @param vault_app_role_mount
