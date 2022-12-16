@@ -14,3 +14,10 @@ appveyor.yml:
   delete: true
 'spec/spec_helper.rb':
   strict_level: ':error'
+Rakefile:
+  requires:
+    - voxpupuli/acceptance/rake
+Gemfile:
+  required:
+    ':system_tests':
+      - gem: voxpupuli-acceptance
