@@ -4,7 +4,6 @@ describe 'vaultbot' do
   test_on = {
     'hardwaremodels' => ['x86_64', 'aarch64'],
   }
-
   on_supported_os(test_on).each do |os, os_facts|
     arch = {
       'amd64' => 'amd64',

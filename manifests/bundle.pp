@@ -10,13 +10,13 @@
 # @param bundle_name
 #   This sets the certificate bundle name.
 # @param logfile
-#   Path to the vaultbot logfile. Defaults to stdout.
+#   Path to the vaultbot logfile.
 # @param renew_hook
 #   Command to execute after certificate has been updated.
 # @param auto_confirm
 #   If set to `true`, user prompts will be auto confirmed with yes.
 # @param vault_addr
-#   The address of the Vault server expressed as a URL and port (default: http://127.0.0.1:8200).
+#   The address of the Vault server expressed as a URL and port.
 # @param vault_cacert
 #   Path to a PEM-encoded CA cert file to use to verify the Vault server SSL certificate.
 # @param vault_capath
@@ -58,15 +58,15 @@
 # @param vault_gcp_auth_service_account_email
 #   The service account email to use for GCP IAM authentication.
 # @param vault_gcp_auth_mount
-#   The mount path for the vault GCP auth method (default: gcp).
+#   The mount path for the vault GCP auth method.
 # @param vault_app_role_mount
-#   The mount path for the AppRole backend (default: approle).
+#   The mount path for the AppRole backend.
 # @param vault_app_role_role_id
 #   RoleID of the AppRole.
 # @param vault_app_role_secret_id
 #   SecretID belonging to AppRole.
 # @param pki_mount
-#   Specifies the PKI backend mount path (default: pki).
+#   Specifies the PKI backend mount path.
 # @param pki_role_name
 #   Specifies the name of the role to create the certificate against.
 # @param pki_common_name
@@ -82,7 +82,7 @@
 # @param pki_private_key_format
 #   Specifies the format for marshaling the private key. Should be one of [der, pkcs8].
 # @param pki_renew_percent
-#   Percentage of requested certificate TTL, which triggers a renewal when passed (>0.00, <1.00) (default: 0.75).
+#   Percentage of requested certificate TTL, which triggers a renewal when passed (>0.00, <1.00).
 # @param pki_renew_time
 #   Time in hours before certificate expiry, which triggers a renewal (e.g. 12h, 1m). Takes precedence over `pki_renew_percent`
 #   when set.
@@ -91,30 +91,28 @@
 # @param pki_cert_path
 #   Path to the requested / to be updated certificate.
 # @param pki_cachain_path
-#   Path to the CA Chain of the requested / to be updated certificate (default: chain.pem).
+#   Path to the CA Chain of the requested / to be updated certificate.
 # @param pki_privkey_path
-#   Path to the private key of the requested / to be updated certificate (default: key.pem).
+#   Path to the private key of the requested / to be updated certificate.
 # @param pki_pembundle_path
 #   Path to the PEM bundle of the requested / to be updated certificate, private key and ca chain.
 # @param pki_jks_path
 #   Path to a JAVA KeyStore where the certificates should be exported.
 # @param pki_jks_password
-#   JAVA KeyStore password (default: ChangeIt).
+#   JAVA KeyStore password.
 # @param pki_jks_cert_alias
-#   Alias in the JAVA KeyStore of the requested / to be updated certificate (default: cert.pem).
+#   Alias in the JAVA KeyStore of the requested / to be updated certificate.
 # @param pki_jks_cachain_alias
-#   Alias in the JAVA KeyStore of the CA Chain of the requested / to be updated certificate (default: chain.pem).
+#   Alias in the JAVA KeyStore of the CA Chain of the requested / to be updated certificate.
 # @param pki_jks_privkey_alias
-#   Alias in the JAVA KeyStore of the private key of the requested / to be updated certificate (default: key.pem).
+#   Alias in the JAVA KeyStore of the private key of the requested / to be updated certificate.
 # @param pki_pkcs12_path
 #   Path to a PKCS#12 KeyStore where the certificates should be exported to.
 # @param pki_pkcs12_umask
-#   File mode of the generated PKCS#12 KeyStore. Existing keystore will keep it's mode. Octal format required (e.g. 0644)
-#   (default: 0600).
+#   File mode of the generated PKCS#12 KeyStore. Existing keystore will keep it's mode. Octal format required (e.g. 0644).
 # @param pki_pkcs12_password
 #   Default password is "ChangeIt", a commonly-used password for PKCS#12 files. Due to the weak encryption used by PKCS#12, it is
-#   RECOMMENDED that you use the default password when encoding PKCS#12 files, and protect the PKCS#12 files using other means
-#   (default: ChangeIt).
+#   RECOMMENDED that you use the default password when encoding PKCS#12 files, and protect the PKCS#12 files using other means.
 define vaultbot::bundle (
   Enum['absent','present'] $ensure = 'present',
   String[1] $bundle_name = $title,
@@ -181,36 +179,60 @@ define vaultbot::bundle (
     $env = []
   } else {
     # Sanity checks
-    unless $vault_addr {
+    $_vault_addr = $vault_addr.lest || { $vaultbot::vault_addr }
+    unless $_vault_addr {
       fail('$vault_addr is required!')
     }
 
-    unless $pki_mount and $pki_role_name and $pki_common_name {
-      fail('$pki_mount and $pki_role_name and $pki_common_name are required!')
+    $_pki_mount = $pki_mount.lest || { $vaultbot::pki_mount }
+    unless $_pki_mount {
+      fail('$pki_mount is required!')
+    }
+
+    $_pki_role_name = $pki_role_name.lest || { $vaultbot::pki_role_name }
+    unless $_pki_role_name {
+      fail('$pki_role_name is required!')
+    }
+
+    unless $pki_common_name {
+      fail('$pki_common_name is required!')
     }
 
     unless $pki_cert_path or $pki_privkey_path or $pki_pembundle_path or $pki_jks_path or $pki_pkcs12_path {
       fail('At least one of $pki_cert_path/$pki_privkey_path/$pki_pembundle_path/$pki_jks_path/$pki_pkcs12_path is required')
     }
 
-    case $vault_auth_method {
+    $_vault_auth_method = $vault_auth_method.lest || { $vaultbot::vault_auth_method }
+    case $_vault_auth_method {
       'approle': {
-        unless $vault_app_role_role_id and $vault_app_role_secret_id {
+        $_vault_app_role_role_id = $vault_app_role_role_id.lest || { $vaultbot::vault_app_role_role_id }
+        $_vault_app_role_secret_id = $vault_app_role_secret_id.lest || { $vaultbot::vault_app_role_secret_id }
+        unless $_vault_app_role_role_id and $_vault_app_role_secret_id {
           fail('$vault_app_role_role_id & $vault_app_role_secret_id are required for auth method "approle"')
         }
       }
       'aws-iam', 'aws-ec2': {
-        unless $vault_aws_auth_role {
+        $_vault_aws_auth_role = $vault_aws_auth_role.lest || { $vaultbot::vault_aws_auth_role }
+        unless $_vault_aws_auth_role {
           fail('$vault_aws_auth_role is required for auth methods "aws-iam"/"aws-ec2"')
         }
       }
+      'gcp-iam', 'gcp-gce': {
+        $_vault_gcp_auth_role = $vault_gcp_auth_role.lest || { $vaultbot::vault_gcp_auth_role }
+        unless $_vault_gcp_auth_role {
+          fail('$vault_gcp_auth_role is required for auth methods "gcp-iam"/"gcp-gce"')
+        }
+      }
       'cert': {
-        unless $vault_client_cert and $vault_client_key {
+        $_vault_client_cert = $vault_client_cert.lest || { $vaultbot::vault_client_cert }
+        $_vault_client_key = $vault_client_key.lest || { $vaultbot::vault_client_key }
+        unless $_vault_client_cert and $_vault_client_key {
           fail('$vault_client_cert & $vault_client_key are required for auth method "approle"')
         }
       }
       'token': {
-        unless $vault_token {
+        $_vault_token = $vault_token.lest || { $vaultbot::vault_token }
+        unless $_vault_token {
           fail('$vault_token is required for auth method "token"')
         }
       }

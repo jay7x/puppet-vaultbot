@@ -78,68 +78,62 @@ describe 'vaultbot::bundle' do
   on_supported_os(test_on).each do |_, os_facts|
     let(:facts) { os_facts }
 
-    context 'without $vault_addr' do
-      let(:params) { basic_params.merge(vault_addr: :undef) }
-
-      it { is_expected.to compile.and_raise_error(%r{\$vault_addr is required}) }
-    end
-
-    context 'without $pki_mount' do
-      let(:params) { basic_params.merge(pki_mount: :undef) }
-
-      it { is_expected.to compile.and_raise_error(%r{\$pki_mount .* required}) }
-    end
-    context 'without $pki_role_name' do
-      let(:params) { basic_params.merge(pki_role_name: :undef) }
-
-      it { is_expected.to compile.and_raise_error(%r{\$pki_role_name .* required}) }
-    end
-    context 'without $pki_common_name' do
-      let(:params) { basic_params.merge(pki_common_name: :undef) }
-
-      it { is_expected.to compile.and_raise_error(%r{\$pki_common_name .* required}) }
-    end
-
-    context 'without any certificate path' do
-      let(:params) do
-        basic_params.merge(
+    # Ensure an error is raised when required field is missing
+    [
+      [ { vault_addr: :undef } ],
+      [ { pki_mount: :undef } ],
+      [ { pki_role_name: :undef } ],
+      [ { pki_common_name: :undef } ],
+      [ { vault_app_role_role_id: :undef, vault_auth_method: 'approle' } ],
+      [ { vault_app_role_secret_id: :undef, vault_auth_method: 'approle' } ],
+      [ { vault_aws_auth_role: :undef, vault_auth_method: 'aws-iam' } ],
+      [ { vault_aws_auth_role: :undef, vault_auth_method: 'aws-ec2' } ],
+      [ { vault_gcp_auth_role: :undef, vault_auth_method: 'gcp-iam' } ],
+      [ { vault_gcp_auth_role: :undef, vault_auth_method: 'gcp-gce' } ],
+      [ { vault_client_cert: :undef, vault_auth_method: 'cert' } ],
+      [ { vault_client_key: :undef, vault_auth_method: 'cert' } ],
+      [ { vault_token: :undef, vault_auth_method: 'token' } ],
+      [
+        {
           pki_cert_path: :undef,
           pki_privkey_path: :undef,
           pki_pembundle_path: :undef,
           pki_jks_path: :undef,
           pki_pkcs12_path: :undef,
-        )
-      end
+        },
+        %r{\$pki_cert_path.* required},
+      ],
+    ].each do |x|
+      context "with #{x[0]}" do
+        field = x[0].keys[0]
+        let(:params) { basic_params.merge(x[0]) }
 
-      it { is_expected.to compile.and_raise_error(%r{\$pki_cert_path.* required}) }
-    end
-
-    # vault_auth_method
-    ['vault_app_role_role_id', 'vault_app_role_secret_id'].each do |approle_param|
-      context "with auth method approle and no $#{approle_param}" do
-        let(:params) { basic_params.merge(vault_auth_method: 'approle', "#{approle_param}": :undef) }
-
-        it { is_expected.to compile.and_raise_error(%r{\$#{approle_param} .* required}) }
+        it { is_expected.to compile.and_raise_error(x[1] ? x[1] : %r{\$#{field} .* required}) }
       end
     end
-    ['aws-iam', 'aws-ec2'].each do |auth_method|
-      context "with auth method #{auth_method} and no $vault_aws_auth_role" do
-        let(:params) { basic_params.merge(vault_auth_method: auth_method, vault_aws_auth_role: :undef) }
 
-        it { is_expected.to compile.and_raise_error(%r{\$vault_aws_auth_role .* required}) }
+    # Ensure no error is raised when required fields are specified as the vaultbot class parameters
+    context 'with class params but without resource params' do
+      let(:pre_condition) do
+        <<-PUPPET
+        class { vaultbot:
+          vault_addr => 'https://vault.example.com',
+          vault_auth_method => 'token',
+          vault_token => 'test-vault-token',
+          pki_mount => 'test-pki',
+          pki_role_name => 'test-pki-role',
+        }
+        PUPPET
       end
-    end
-    ['vault_client_cert', 'vault_client_key'].each do |cert_param|
-      context "with auth method cert and no $#{cert_param}" do
-        let(:params) { basic_params.merge(vault_auth_method: 'cert', "#{cert_param}": :undef) }
-
-        it { is_expected.to compile.and_raise_error(%r{\$#{cert_param} .* required}) }
+      let(:params) do
+        {
+          pki_common_name: 'test-pki-cn.example.com',
+          pki_cert_path: '/etc/ssl/test-cert.pem',
+          pki_privkey_path: '/etc/ssl/test-pkey.pem',
+        }
       end
-    end
-    context 'with auth method token and no $vault_token' do
-      let(:params) { basic_params.merge(vault_auth_method: 'token', vault_token: :undef) }
 
-      it { is_expected.to compile.and_raise_error(%r{\$vault_token .* required}) }
+      it { is_expected.to compile }
     end
   end
 

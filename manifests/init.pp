@@ -45,8 +45,10 @@
 #   Systemd timer `OnCalendar` value. This defines when to run the vaultbot service.
 # @param on_boot_sec
 #   Systemd timer `OnBootSec` value. This defines how long to wait before starting the vaultbot service after system reboot.
+#   Disabled if set to empty string ('').
 # @param randomized_delay_sec
 #   Systemd timer `RandomizedDelaySec` value. This defines a random delay before starting the service from the timer.
+#   Disabled if set to empty string ('').
 # @param exec_start
 #   Systemd service `ExecStart` value.
 # @param syslog_identifier
@@ -54,7 +56,7 @@
 # @param auto_confirm
 #   If set to `true`, user prompts will be auto confirmed with yes.
 # @param vault_addr
-#   The address of the Vault server expressed as a URL and port (default: http://127.0.0.1:8200).
+#   The address of the Vault server expressed as a URL and port.
 # @param vault_cacert
 #   Path to a PEM-encoded CA cert file to use to verify the Vault server SSL certificate.
 # @param vault_capath
@@ -84,7 +86,7 @@
 # @param vault_aws_auth_role
 #   The role to use for AWS IAM authentication.
 # @param vault_aws_auth_mount
-#   The mount path for the vault AWS auth method (default: aws).
+#   The mount path for the vault AWS auth method.
 # @param vault_aws_auth_header
 #   The header to use during vault AWS IAM authentication. If empty no header will be set.
 # @param vault_aws_auth_nonce
@@ -96,15 +98,15 @@
 # @param vault_gcp_auth_service_account_email
 #   The service account email to use for GCP IAM authentication.
 # @param vault_gcp_auth_mount
-#   The mount path for the vault GCP auth method (default: gcp).
+#   The mount path for the vault GCP auth method.
 # @param vault_app_role_mount
-#   The mount path for the AppRole backend (default: approle).
+#   The mount path for the AppRole backend.
 # @param vault_app_role_role_id
 #   RoleID of the AppRole.
 # @param vault_app_role_secret_id
 #   SecretID belonging to AppRole.
 # @param pki_mount
-#   Specifies the PKI backend mount path (default: pki)
+#   Specifies the PKI backend mount path.
 # @param pki_role_name
 #   Specifies the name of the role to create the certificate against.
 # @param pki_ttl
@@ -114,7 +116,7 @@
 # @param pki_private_key_format
 #   Specifies the format for marshaling the private key. Should be one of [der, pkcs8].
 # @param pki_renew_percent
-#   Percentage of requested certificate TTL, which triggers a renewal when passed (>0.00, <1.00) (default: 0.75)
+#   Percentage of requested certificate TTL, which triggers a renewal when passed (>0.00, <1.00).
 # @param pki_renew_time
 #   Time in hours before certificate expiry, which triggers a renewal (e.g. 12h, 1m). Takes precedence over `pki_renew_percent`
 #   when set.
