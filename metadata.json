@@ -21,20 +21,23 @@
       "operatingsystem": "CentOS",
       "operatingsystemrelease": [
         "7",
-        "8"
+        "8",
+        "9"
       ]
     },
     {
       "operatingsystem": "OracleLinux",
       "operatingsystemrelease": [
         "7",
-        "8"
+        "8",
+        "9"
       ]
     },
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
-        "8"
+        "8",
+        "9"
       ]
     },
     {
@@ -48,7 +51,8 @@
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
         "18.04",
-        "20.04"
+        "20.04",
+        "22.04"
       ]
     }
   ],
@@ -58,7 +62,6 @@
       "version_requirement": ">= 6.0.0 < 8.0.0"
     }
   ],
-  "issues": "https://github.com/jay7x/puppet-vaultbot/issues",
   "pdk-version": "2.5.0",
   "template-url": "pdk-default#2.5.0",
   "template-ref": "tags/2.5.0-0-g369d483"
