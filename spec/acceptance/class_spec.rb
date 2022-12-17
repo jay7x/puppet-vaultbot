@@ -2,7 +2,6 @@
 
 require 'spec_helper_acceptance'
 
-# rubocop:disable RSpec/RepeatedExampleGroupBody
 describe 'vaultbot class:' do
   it_behaves_like 'an idempotent resource' do
     let(:manifest) do
