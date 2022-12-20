@@ -6,6 +6,7 @@
   "license": "Apache-2.0",
   "source": "https://github.com/jay7x/puppet-vaultbot.git",
   "project_page": "https://github.com/jay7x/puppet-vaultbot",
+  "issues_url": "https://github.com/jay7x/puppet-vaultbot/issues",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
