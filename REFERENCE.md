@@ -223,6 +223,7 @@ Default value: `'daily'`
 Data type: `String`
 
 Systemd timer `OnBootSec` value. This defines how long to wait before starting the vaultbot service after system reboot.
+Disabled if set to empty string ('').
 
 Default value: `'15min'`
 
@@ -231,6 +232,7 @@ Default value: `'15min'`
 Data type: `String`
 
 Systemd timer `RandomizedDelaySec` value. This defines a random delay before starting the service from the timer.
+Disabled if set to empty string ('').
 
 Default value: `'15min'`
 
@@ -262,7 +264,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-The address of the Vault server expressed as a URL and port (default: http://127.0.0.1:8200).
+The address of the Vault server expressed as a URL and port.
 
 Default value: ``undef``
 
@@ -376,7 +378,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-The mount path for the vault AWS auth method (default: aws).
+The mount path for the vault AWS auth method.
 
 Default value: ``undef``
 
@@ -424,7 +426,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-The mount path for the vault GCP auth method (default: gcp).
+The mount path for the vault GCP auth method.
 
 Default value: ``undef``
 
@@ -432,7 +434,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-The mount path for the AppRole backend (default: approle).
+The mount path for the AppRole backend.
 
 Default value: ``undef``
 
@@ -456,7 +458,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-Specifies the PKI backend mount path (default: pki)
+Specifies the PKI backend mount path.
 
 Default value: ``undef``
 
@@ -496,7 +498,7 @@ Default value: ``undef``
 
 Data type: `Optional[Float[0.00,1.00]]`
 
-Percentage of requested certificate TTL, which triggers a renewal when passed (>0.00, <1.00) (default: 0.75)
+Percentage of requested certificate TTL, which triggers a renewal when passed (>0.00, <1.00).
 
 Default value: ``undef``
 
@@ -611,7 +613,7 @@ Default value: `$title`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
-Path to the vaultbot logfile. Defaults to stdout.
+Path to the vaultbot logfile.
 
 Default value: ``undef``
 
@@ -635,7 +637,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-The address of the Vault server expressed as a URL and port (default: http://127.0.0.1:8200).
+The address of the Vault server expressed as a URL and port.
 
 Default value: ``undef``
 
@@ -797,7 +799,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-The mount path for the vault GCP auth method (default: gcp).
+The mount path for the vault GCP auth method.
 
 Default value: ``undef``
 
@@ -805,7 +807,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-The mount path for the AppRole backend (default: approle).
+The mount path for the AppRole backend.
 
 Default value: ``undef``
 
@@ -829,7 +831,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-Specifies the PKI backend mount path (default: pki).
+Specifies the PKI backend mount path.
 
 Default value: ``undef``
 
@@ -893,7 +895,7 @@ Default value: ``undef``
 
 Data type: `Optional[Float[0.00,1.00]]`
 
-Percentage of requested certificate TTL, which triggers a renewal when passed (>0.00, <1.00) (default: 0.75).
+Percentage of requested certificate TTL, which triggers a renewal when passed (>0.00, <1.00).
 
 Default value: ``undef``
 
@@ -926,7 +928,7 @@ Default value: ``undef``
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
-Path to the CA Chain of the requested / to be updated certificate (default: chain.pem).
+Path to the CA Chain of the requested / to be updated certificate.
 
 Default value: ``undef``
 
@@ -934,7 +936,7 @@ Default value: ``undef``
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
-Path to the private key of the requested / to be updated certificate (default: key.pem).
+Path to the private key of the requested / to be updated certificate.
 
 Default value: ``undef``
 
@@ -958,7 +960,7 @@ Default value: ``undef``
 
 Data type: `Optional[Sensitive[String[1]]]`
 
-JAVA KeyStore password (default: ChangeIt).
+JAVA KeyStore password.
 
 Default value: ``undef``
 
@@ -966,7 +968,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-Alias in the JAVA KeyStore of the requested / to be updated certificate (default: cert.pem).
+Alias in the JAVA KeyStore of the requested / to be updated certificate.
 
 Default value: ``undef``
 
@@ -974,7 +976,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-Alias in the JAVA KeyStore of the CA Chain of the requested / to be updated certificate (default: chain.pem).
+Alias in the JAVA KeyStore of the CA Chain of the requested / to be updated certificate.
 
 Default value: ``undef``
 
@@ -982,7 +984,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-Alias in the JAVA KeyStore of the private key of the requested / to be updated certificate (default: key.pem).
+Alias in the JAVA KeyStore of the private key of the requested / to be updated certificate.
 
 Default value: ``undef``
 
@@ -998,8 +1000,7 @@ Default value: ``undef``
 
 Data type: `Optional[String[1]]`
 
-File mode of the generated PKCS#12 KeyStore. Existing keystore will keep it's mode. Octal format required (e.g. 0644)
-(default: 0600).
+File mode of the generated PKCS#12 KeyStore. Existing keystore will keep it's mode. Octal format required (e.g. 0644).
 
 Default value: ``undef``
 
@@ -1008,8 +1009,7 @@ Default value: ``undef``
 Data type: `Optional[Sensitive[String[1]]]`
 
 Default password is "ChangeIt", a commonly-used password for PKCS#12 files. Due to the weak encryption used by PKCS#12, it is
-RECOMMENDED that you use the default password when encoding PKCS#12 files, and protect the PKCS#12 files using other means
-(default: ChangeIt).
+RECOMMENDED that you use the default password when encoding PKCS#12 files, and protect the PKCS#12 files using other means.
 
 Default value: ``undef``
 
