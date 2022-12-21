@@ -18,7 +18,13 @@ Rakefile:
   requires:
     - require: 'voxpupuli/acceptance/rake'
       conditional: 'not Rake::Task.task_defined?(:beaker)'
+  changelog_user: jay7x
 Gemfile:
   required:
     ':system_tests':
       - gem: voxpupuli-acceptance
+  optional:
+    ':development':
+      - gem: 'github_changelog_generator'
+        version: '~> 1.15'
+        condition: "Gem::Version.new(RUBY_VERSION.dup) >= Gem::Version.new('2.3.0')"
