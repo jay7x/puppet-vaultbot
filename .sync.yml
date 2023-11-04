@@ -16,8 +16,7 @@ appveyor.yml:
   strict_level: ':error'
 Rakefile:
   requires:
-    - require: 'voxpupuli/acceptance/rake'
-      conditional: 'not Rake::Task.task_defined?(:beaker)'
+    - 'voxpupuli/acceptance/rake'
   changelog_user: jay7x
 Gemfile:
   required:
