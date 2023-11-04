@@ -2,6 +2,6 @@
 # See https://github.com/puppetlabs/puppetlabs_spec_helper#using-fixtures for details
 ---
 fixtures:
-  forge_modules:
-    stdlib: "puppetlabs/stdlib"
-    archive: "puppet/archive"
+  repositories:
+    stdlib: "https://github.com/puppetlabs/puppetlabs-stdlib.git"
+    archive: "https://github.com/voxpupuli/puppet-archive.git"
