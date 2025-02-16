@@ -124,7 +124,7 @@
 #   If set to `true`, the certificate will be renewed without checking the expiry.
 class vaultbot (
   # Install options
-  String[1] $version = '1.13.0',
+  String[1] $version = '1.14.3',
   Enum['absent','present'] $ensure = 'present',
   Enum['archive'] $install_method = 'archive',
   String[1] $download_url = 'https://gitlab.com/msvechla/vaultbot/-/releases/v<%= $version %>/downloads/vaultbot_<%= $version %>_<%= $os %>_<%= $arch %><%= $download_extension %>',

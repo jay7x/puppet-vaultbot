@@ -16,7 +16,7 @@ describe 'vaultbot' do
 
       # Defaults
       context 'with defaults' do
-        version = '1.13.0'
+        version = '1.14.3'
         archives_top_dir = '/opt/vaultbot'
         extract_dir = "#{archives_top_dir}/v#{version}"
         extract_binary = "#{extract_dir}/vaultbot"
@@ -220,7 +220,7 @@ describe 'vaultbot' do
       context 'with ensure=>absent' do
         let(:params) { { ensure: 'absent' } }
 
-        version = '1.13.0'
+        version = '1.14.3'
         archives_top_dir = '/opt/vaultbot'
         extract_dir = "#{archives_top_dir}/v#{version}"
         extract_binary = "#{extract_dir}/vaultbot"
