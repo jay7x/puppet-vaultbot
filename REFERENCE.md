@@ -18,7 +18,7 @@
 
 ### Defined types
 
-* [`vaultbot::bundle`](#vaultbotbundle): Manages a certificate bundle with vaultbot
+* [`vaultbot::bundle`](#vaultbot--bundle): Manages a certificate bundle with vaultbot
 
 ## Classes
 
@@ -49,59 +49,59 @@ class { 'vaultbot':
 
 The following parameters are available in the `vaultbot` class:
 
-* [`version`](#version)
-* [`ensure`](#ensure)
-* [`install_method`](#install_method)
-* [`download_url`](#download_url)
-* [`download_extension`](#download_extension)
-* [`checksum_verify`](#checksum_verify)
-* [`checksum_url`](#checksum_url)
-* [`binary_name`](#binary_name)
-* [`bin_dir`](#bin_dir)
-* [`archives_top_dir`](#archives_top_dir)
-* [`etc_dir`](#etc_dir)
-* [`proxy_url`](#proxy_url)
-* [`service_manage`](#service_manage)
-* [`on_calendar`](#on_calendar)
-* [`on_boot_sec`](#on_boot_sec)
-* [`randomized_delay_sec`](#randomized_delay_sec)
-* [`exec_start`](#exec_start)
-* [`syslog_identifier`](#syslog_identifier)
-* [`auto_confirm`](#auto_confirm)
-* [`vault_addr`](#vault_addr)
-* [`vault_cacert`](#vault_cacert)
-* [`vault_capath`](#vault_capath)
-* [`vault_client_cert`](#vault_client_cert)
-* [`vault_client_key`](#vault_client_key)
-* [`vault_client_timeout`](#vault_client_timeout)
-* [`vault_skip_verify`](#vault_skip_verify)
-* [`vault_tls_server_name`](#vault_tls_server_name)
-* [`vault_max_retries`](#vault_max_retries)
-* [`vault_token`](#vault_token)
-* [`vault_renew_token`](#vault_renew_token)
-* [`vault_auth_method`](#vault_auth_method)
-* [`vault_certificate_role`](#vault_certificate_role)
-* [`vault_aws_auth_role`](#vault_aws_auth_role)
-* [`vault_aws_auth_mount`](#vault_aws_auth_mount)
-* [`vault_aws_auth_header`](#vault_aws_auth_header)
-* [`vault_aws_auth_nonce`](#vault_aws_auth_nonce)
-* [`vault_aws_auth_nonce_path`](#vault_aws_auth_nonce_path)
-* [`vault_gcp_auth_role`](#vault_gcp_auth_role)
-* [`vault_gcp_auth_service_account_email`](#vault_gcp_auth_service_account_email)
-* [`vault_gcp_auth_mount`](#vault_gcp_auth_mount)
-* [`vault_app_role_mount`](#vault_app_role_mount)
-* [`vault_app_role_role_id`](#vault_app_role_role_id)
-* [`vault_app_role_secret_id`](#vault_app_role_secret_id)
-* [`pki_mount`](#pki_mount)
-* [`pki_role_name`](#pki_role_name)
-* [`pki_ttl`](#pki_ttl)
-* [`pki_exclude_cn_from_sans`](#pki_exclude_cn_from_sans)
-* [`pki_private_key_format`](#pki_private_key_format)
-* [`pki_renew_percent`](#pki_renew_percent)
-* [`pki_renew_time`](#pki_renew_time)
-* [`pki_force_renew`](#pki_force_renew)
+* [`version`](#-vaultbot--version)
+* [`ensure`](#-vaultbot--ensure)
+* [`install_method`](#-vaultbot--install_method)
+* [`download_url`](#-vaultbot--download_url)
+* [`download_extension`](#-vaultbot--download_extension)
+* [`checksum_verify`](#-vaultbot--checksum_verify)
+* [`checksum_url`](#-vaultbot--checksum_url)
+* [`binary_name`](#-vaultbot--binary_name)
+* [`bin_dir`](#-vaultbot--bin_dir)
+* [`archives_top_dir`](#-vaultbot--archives_top_dir)
+* [`etc_dir`](#-vaultbot--etc_dir)
+* [`proxy_url`](#-vaultbot--proxy_url)
+* [`service_manage`](#-vaultbot--service_manage)
+* [`on_calendar`](#-vaultbot--on_calendar)
+* [`on_boot_sec`](#-vaultbot--on_boot_sec)
+* [`randomized_delay_sec`](#-vaultbot--randomized_delay_sec)
+* [`exec_start`](#-vaultbot--exec_start)
+* [`syslog_identifier`](#-vaultbot--syslog_identifier)
+* [`auto_confirm`](#-vaultbot--auto_confirm)
+* [`vault_addr`](#-vaultbot--vault_addr)
+* [`vault_cacert`](#-vaultbot--vault_cacert)
+* [`vault_capath`](#-vaultbot--vault_capath)
+* [`vault_client_cert`](#-vaultbot--vault_client_cert)
+* [`vault_client_key`](#-vaultbot--vault_client_key)
+* [`vault_client_timeout`](#-vaultbot--vault_client_timeout)
+* [`vault_skip_verify`](#-vaultbot--vault_skip_verify)
+* [`vault_tls_server_name`](#-vaultbot--vault_tls_server_name)
+* [`vault_max_retries`](#-vaultbot--vault_max_retries)
+* [`vault_token`](#-vaultbot--vault_token)
+* [`vault_renew_token`](#-vaultbot--vault_renew_token)
+* [`vault_auth_method`](#-vaultbot--vault_auth_method)
+* [`vault_certificate_role`](#-vaultbot--vault_certificate_role)
+* [`vault_aws_auth_role`](#-vaultbot--vault_aws_auth_role)
+* [`vault_aws_auth_mount`](#-vaultbot--vault_aws_auth_mount)
+* [`vault_aws_auth_header`](#-vaultbot--vault_aws_auth_header)
+* [`vault_aws_auth_nonce`](#-vaultbot--vault_aws_auth_nonce)
+* [`vault_aws_auth_nonce_path`](#-vaultbot--vault_aws_auth_nonce_path)
+* [`vault_gcp_auth_role`](#-vaultbot--vault_gcp_auth_role)
+* [`vault_gcp_auth_service_account_email`](#-vaultbot--vault_gcp_auth_service_account_email)
+* [`vault_gcp_auth_mount`](#-vaultbot--vault_gcp_auth_mount)
+* [`vault_app_role_mount`](#-vaultbot--vault_app_role_mount)
+* [`vault_app_role_role_id`](#-vaultbot--vault_app_role_role_id)
+* [`vault_app_role_secret_id`](#-vaultbot--vault_app_role_secret_id)
+* [`pki_mount`](#-vaultbot--pki_mount)
+* [`pki_role_name`](#-vaultbot--pki_role_name)
+* [`pki_ttl`](#-vaultbot--pki_ttl)
+* [`pki_exclude_cn_from_sans`](#-vaultbot--pki_exclude_cn_from_sans)
+* [`pki_private_key_format`](#-vaultbot--pki_private_key_format)
+* [`pki_renew_percent`](#-vaultbot--pki_renew_percent)
+* [`pki_renew_time`](#-vaultbot--pki_renew_time)
+* [`pki_force_renew`](#-vaultbot--pki_force_renew)
 
-##### <a name="version"></a>`version`
+##### <a name="-vaultbot--version"></a>`version`
 
 Data type: `String[1]`
 
@@ -109,7 +109,7 @@ The vaultbot version to install.
 
 Default value: `'1.13.0'`
 
-##### <a name="ensure"></a>`ensure`
+##### <a name="-vaultbot--ensure"></a>`ensure`
 
 Data type: `Enum['absent','present']`
 
@@ -117,7 +117,7 @@ This specifies whether to install vaultbot. Should be one of [present, absent].
 
 Default value: `'present'`
 
-##### <a name="install_method"></a>`install_method`
+##### <a name="-vaultbot--install_method"></a>`install_method`
 
 Data type: `Enum['archive']`
 
@@ -125,7 +125,7 @@ This sets the installation method. Only 'archive' method is supported at the mom
 
 Default value: `'archive'`
 
-##### <a name="download_url"></a>`download_url`
+##### <a name="-vaultbot--download_url"></a>`download_url`
 
 Data type: `String[1]`
 
@@ -138,7 +138,7 @@ available:
 
 Default value: `'https://gitlab.com/msvechla/vaultbot/-/releases/v<%= $version %>/downloads/vaultbot_<%= $version %>_<%= $os %>_<%= $arch %><%= $download_extension %>'`
 
-##### <a name="download_extension"></a>`download_extension`
+##### <a name="-vaultbot--download_extension"></a>`download_extension`
 
 Data type: `String[1]`
 
@@ -146,15 +146,15 @@ Extension of the archive to download. This determines extractor indirectly.
 
 Default value: `'.tar.gz'`
 
-##### <a name="checksum_verify"></a>`checksum_verify`
+##### <a name="-vaultbot--checksum_verify"></a>`checksum_verify`
 
 Data type: `Boolean`
 
 If set to 'true', checksum of the archive downloaded will be verified.
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="checksum_url"></a>`checksum_url`
+##### <a name="-vaultbot--checksum_url"></a>`checksum_url`
 
 Data type: `String[1]`
 
@@ -162,7 +162,7 @@ URL of a file containing the archive checksums.
 
 Default value: `'https://gitlab.com/msvechla/vaultbot/-/releases/v<%= $version %>/downloads/vaultbot_<%= $version %>_checksums.txt'`
 
-##### <a name="binary_name"></a>`binary_name`
+##### <a name="-vaultbot--binary_name"></a>`binary_name`
 
 Data type: `String[1]`
 
@@ -170,7 +170,7 @@ Name of vaultbot binary to install into.
 
 Default value: `'vaultbot'`
 
-##### <a name="bin_dir"></a>`bin_dir`
+##### <a name="-vaultbot--bin_dir"></a>`bin_dir`
 
 Data type: `Stdlib::AbsolutePath`
 
@@ -178,7 +178,7 @@ Path to install vaultbot into.
 
 Default value: `'/usr/local/bin'`
 
-##### <a name="archives_top_dir"></a>`archives_top_dir`
+##### <a name="-vaultbot--archives_top_dir"></a>`archives_top_dir`
 
 Data type: `Stdlib::AbsolutePath`
 
@@ -186,7 +186,7 @@ Path to store downloaded archive into.
 
 Default value: `'/opt/vaultbot'`
 
-##### <a name="etc_dir"></a>`etc_dir`
+##### <a name="-vaultbot--etc_dir"></a>`etc_dir`
 
 Data type: `Stdlib::AbsolutePath`
 
@@ -194,23 +194,23 @@ Path to store vaultbot configs into.
 
 Default value: `'/etc/vaultbot'`
 
-##### <a name="proxy_url"></a>`proxy_url`
+##### <a name="-vaultbot--proxy_url"></a>`proxy_url`
 
 Data type: `Optional[String[1]]`
 
 If set, use the URL as a HTTP proxy to use when downloading files.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="service_manage"></a>`service_manage`
+##### <a name="-vaultbot--service_manage"></a>`service_manage`
 
 Data type: `Boolean`
 
 If set to `true`, manage the vaultbot timer and service.
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="on_calendar"></a>`on_calendar`
+##### <a name="-vaultbot--on_calendar"></a>`on_calendar`
 
 Data type: `String[1]`
 
@@ -218,7 +218,7 @@ Systemd timer `OnCalendar` value. This defines when to run the vaultbot service.
 
 Default value: `'daily'`
 
-##### <a name="on_boot_sec"></a>`on_boot_sec`
+##### <a name="-vaultbot--on_boot_sec"></a>`on_boot_sec`
 
 Data type: `String`
 
@@ -227,7 +227,7 @@ Disabled if set to empty string ('').
 
 Default value: `'15min'`
 
-##### <a name="randomized_delay_sec"></a>`randomized_delay_sec`
+##### <a name="-vaultbot--randomized_delay_sec"></a>`randomized_delay_sec`
 
 Data type: `String`
 
@@ -236,7 +236,7 @@ Disabled if set to empty string ('').
 
 Default value: `'15min'`
 
-##### <a name="exec_start"></a>`exec_start`
+##### <a name="-vaultbot--exec_start"></a>`exec_start`
 
 Data type: `String[1]`
 
@@ -244,7 +244,7 @@ Systemd service `ExecStart` value.
 
 Default value: `"${bin_dir}/${binary_name}"`
 
-##### <a name="syslog_identifier"></a>`syslog_identifier`
+##### <a name="-vaultbot--syslog_identifier"></a>`syslog_identifier`
 
 Data type: `String[1]`
 
@@ -252,276 +252,276 @@ Systemd service `SyslogIdentifier` value.
 
 Default value: `'vaultbot-%i'`
 
-##### <a name="auto_confirm"></a>`auto_confirm`
+##### <a name="-vaultbot--auto_confirm"></a>`auto_confirm`
 
 Data type: `Optional[Boolean]`
 
 If set to `true`, user prompts will be auto confirmed with yes.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_addr"></a>`vault_addr`
+##### <a name="-vaultbot--vault_addr"></a>`vault_addr`
 
 Data type: `Optional[String[1]]`
 
 The address of the Vault server expressed as a URL and port.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_cacert"></a>`vault_cacert`
+##### <a name="-vaultbot--vault_cacert"></a>`vault_cacert`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to a PEM-encoded CA cert file to use to verify the Vault server SSL certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_capath"></a>`vault_capath`
+##### <a name="-vaultbot--vault_capath"></a>`vault_capath`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to a directory of PEM-encoded CA cert files to verify the Vault server SSL certificate. If `vault_cacert` is specified,
 its value will take precedence.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_client_cert"></a>`vault_client_cert`
+##### <a name="-vaultbot--vault_client_cert"></a>`vault_client_cert`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to a PEM-encoded client certificate for TLS authentication to the Vault server.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_client_key"></a>`vault_client_key`
+##### <a name="-vaultbot--vault_client_key"></a>`vault_client_key`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to an unencrypted PEM-encoded private key matching the client certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_client_timeout"></a>`vault_client_timeout`
+##### <a name="-vaultbot--vault_client_timeout"></a>`vault_client_timeout`
 
 Data type: `Optional[Integer[0]]`
 
 Timeout variable for the vault client.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_skip_verify"></a>`vault_skip_verify`
+##### <a name="-vaultbot--vault_skip_verify"></a>`vault_skip_verify`
 
 Data type: `Optional[Boolean]`
 
 If set to `true`, do not verify Vault's presented certificate before communicating with it. Setting this variable is not
 recommended except during testing.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_tls_server_name"></a>`vault_tls_server_name`
+##### <a name="-vaultbot--vault_tls_server_name"></a>`vault_tls_server_name`
 
 Data type: `Optional[String]`
 
 If set, use the given name as the SNI host when connecting via TLS.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_max_retries"></a>`vault_max_retries`
+##### <a name="-vaultbot--vault_max_retries"></a>`vault_max_retries`
 
 Data type: `Optional[Integer[0]]`
 
 The maximum number of retries when a 5xx error code is encountered.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_token"></a>`vault_token`
+##### <a name="-vaultbot--vault_token"></a>`vault_token`
 
 Data type: `Optional[String[1]]`
 
 The Vault authentication token.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_renew_token"></a>`vault_renew_token`
+##### <a name="-vaultbot--vault_renew_token"></a>`vault_renew_token`
 
 Data type: `Optional[Boolean]`
 
 If set, vaultbot tries to automatically renew the current token.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_auth_method"></a>`vault_auth_method`
+##### <a name="-vaultbot--vault_auth_method"></a>`vault_auth_method`
 
 Data type: `Optional[Enum['agent','cert','approle','token','aws-iam','aws-ec2','gcp-gce','gcp-iam']]`
 
 The method used to authenticate to vault. Should be one of [agent, cert, approle, token, aws-iam, aws-ec2, gcp-gce, gcp-iam].
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_certificate_role"></a>`vault_certificate_role`
+##### <a name="-vaultbot--vault_certificate_role"></a>`vault_certificate_role`
 
 Data type: `Optional[String[1]]`
 
 The certificate role to authenticate against, when using the cert auth method.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_aws_auth_role"></a>`vault_aws_auth_role`
+##### <a name="-vaultbot--vault_aws_auth_role"></a>`vault_aws_auth_role`
 
 Data type: `Optional[String[1]]`
 
 The role to use for AWS IAM authentication.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_aws_auth_mount"></a>`vault_aws_auth_mount`
+##### <a name="-vaultbot--vault_aws_auth_mount"></a>`vault_aws_auth_mount`
 
 Data type: `Optional[String[1]]`
 
 The mount path for the vault AWS auth method.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_aws_auth_header"></a>`vault_aws_auth_header`
+##### <a name="-vaultbot--vault_aws_auth_header"></a>`vault_aws_auth_header`
 
 Data type: `Optional[String[1]]`
 
 The header to use during vault AWS IAM authentication. If empty no header will be set.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_aws_auth_nonce"></a>`vault_aws_auth_nonce`
+##### <a name="-vaultbot--vault_aws_auth_nonce"></a>`vault_aws_auth_nonce`
 
 Data type: `Optional[String[1]]`
 
 The nonce to use during vault AWS EC2 authentication.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_aws_auth_nonce_path"></a>`vault_aws_auth_nonce_path`
+##### <a name="-vaultbot--vault_aws_auth_nonce_path"></a>`vault_aws_auth_nonce_path`
 
 Data type: `Optional[String[1]]`
 
 If set, the nonce that is used during vault AWS EC2 authentication will be written to this path.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_gcp_auth_role"></a>`vault_gcp_auth_role`
+##### <a name="-vaultbot--vault_gcp_auth_role"></a>`vault_gcp_auth_role`
 
 Data type: `Optional[String[1]]`
 
 The role to use for GCP authentication.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_gcp_auth_service_account_email"></a>`vault_gcp_auth_service_account_email`
+##### <a name="-vaultbot--vault_gcp_auth_service_account_email"></a>`vault_gcp_auth_service_account_email`
 
 Data type: `Optional[String[1]]`
 
 The service account email to use for GCP IAM authentication.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_gcp_auth_mount"></a>`vault_gcp_auth_mount`
+##### <a name="-vaultbot--vault_gcp_auth_mount"></a>`vault_gcp_auth_mount`
 
 Data type: `Optional[String[1]]`
 
 The mount path for the vault GCP auth method.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_app_role_mount"></a>`vault_app_role_mount`
+##### <a name="-vaultbot--vault_app_role_mount"></a>`vault_app_role_mount`
 
 Data type: `Optional[String[1]]`
 
 The mount path for the AppRole backend.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_app_role_role_id"></a>`vault_app_role_role_id`
+##### <a name="-vaultbot--vault_app_role_role_id"></a>`vault_app_role_role_id`
 
 Data type: `Optional[String[1]]`
 
 RoleID of the AppRole.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_app_role_secret_id"></a>`vault_app_role_secret_id`
+##### <a name="-vaultbot--vault_app_role_secret_id"></a>`vault_app_role_secret_id`
 
 Data type: `Optional[String[1]]`
 
 SecretID belonging to AppRole.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_mount"></a>`pki_mount`
+##### <a name="-vaultbot--pki_mount"></a>`pki_mount`
 
 Data type: `Optional[String[1]]`
 
 Specifies the PKI backend mount path.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_role_name"></a>`pki_role_name`
+##### <a name="-vaultbot--pki_role_name"></a>`pki_role_name`
 
 Data type: `Optional[String[1]]`
 
 Specifies the name of the role to create the certificate against.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_ttl"></a>`pki_ttl`
+##### <a name="-vaultbot--pki_ttl"></a>`pki_ttl`
 
 Data type: `Optional[String[1]]`
 
 Specifies requested Time To Live.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_exclude_cn_from_sans"></a>`pki_exclude_cn_from_sans`
+##### <a name="-vaultbot--pki_exclude_cn_from_sans"></a>`pki_exclude_cn_from_sans`
 
 Data type: `Optional[Boolean]`
 
 If set to `true`, the given `pki_common_name` will not be included in Subject Alternate Names.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_private_key_format"></a>`pki_private_key_format`
+##### <a name="-vaultbot--pki_private_key_format"></a>`pki_private_key_format`
 
 Data type: `Optional[Enum['der','pkcs8']]`
 
 Specifies the format for marshaling the private key. Should be one of [der, pkcs8].
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_renew_percent"></a>`pki_renew_percent`
+##### <a name="-vaultbot--pki_renew_percent"></a>`pki_renew_percent`
 
 Data type: `Optional[Float[0.00,1.00]]`
 
 Percentage of requested certificate TTL, which triggers a renewal when passed (>0.00, <1.00).
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_renew_time"></a>`pki_renew_time`
+##### <a name="-vaultbot--pki_renew_time"></a>`pki_renew_time`
 
 Data type: `Optional[String[1]]`
 
 Time in hours before certificate expiry, which triggers a renewal (e.g. 12h, 1m). Takes precedence over `pki_renew_percent`
 when set.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_force_renew"></a>`pki_force_renew`
+##### <a name="-vaultbot--pki_force_renew"></a>`pki_force_renew`
 
 Data type: `Optional[Boolean]`
 
 If set to `true`, the certificate will be renewed without checking the expiry.
 
-Default value: ``undef``
+Default value: `undef`
 
 ## Defined types
 
-### <a name="vaultbotbundle"></a>`vaultbot::bundle`
+### <a name="vaultbot--bundle"></a>`vaultbot::bundle`
 
 Manages a certificate bundle with vaultbot
 
@@ -540,60 +540,60 @@ FIXME
 
 The following parameters are available in the `vaultbot::bundle` defined type:
 
-* [`ensure`](#ensure)
-* [`bundle_name`](#bundle_name)
-* [`logfile`](#logfile)
-* [`renew_hook`](#renew_hook)
-* [`auto_confirm`](#auto_confirm)
-* [`vault_addr`](#vault_addr)
-* [`vault_cacert`](#vault_cacert)
-* [`vault_capath`](#vault_capath)
-* [`vault_client_cert`](#vault_client_cert)
-* [`vault_client_key`](#vault_client_key)
-* [`vault_client_timeout`](#vault_client_timeout)
-* [`vault_skip_verify`](#vault_skip_verify)
-* [`vault_tls_server_name`](#vault_tls_server_name)
-* [`vault_max_retries`](#vault_max_retries)
-* [`vault_token`](#vault_token)
-* [`vault_renew_token`](#vault_renew_token)
-* [`vault_auth_method`](#vault_auth_method)
-* [`vault_certificate_role`](#vault_certificate_role)
-* [`vault_aws_auth_role`](#vault_aws_auth_role)
-* [`vault_aws_auth_mount`](#vault_aws_auth_mount)
-* [`vault_aws_auth_header`](#vault_aws_auth_header)
-* [`vault_aws_auth_nonce`](#vault_aws_auth_nonce)
-* [`vault_aws_auth_nonce_path`](#vault_aws_auth_nonce_path)
-* [`vault_gcp_auth_role`](#vault_gcp_auth_role)
-* [`vault_gcp_auth_service_account_email`](#vault_gcp_auth_service_account_email)
-* [`vault_gcp_auth_mount`](#vault_gcp_auth_mount)
-* [`vault_app_role_mount`](#vault_app_role_mount)
-* [`vault_app_role_role_id`](#vault_app_role_role_id)
-* [`vault_app_role_secret_id`](#vault_app_role_secret_id)
-* [`pki_mount`](#pki_mount)
-* [`pki_role_name`](#pki_role_name)
-* [`pki_common_name`](#pki_common_name)
-* [`pki_alt_names`](#pki_alt_names)
-* [`pki_ip_sans`](#pki_ip_sans)
-* [`pki_ttl`](#pki_ttl)
-* [`pki_exclude_cn_from_sans`](#pki_exclude_cn_from_sans)
-* [`pki_private_key_format`](#pki_private_key_format)
-* [`pki_renew_percent`](#pki_renew_percent)
-* [`pki_renew_time`](#pki_renew_time)
-* [`pki_force_renew`](#pki_force_renew)
-* [`pki_cert_path`](#pki_cert_path)
-* [`pki_cachain_path`](#pki_cachain_path)
-* [`pki_privkey_path`](#pki_privkey_path)
-* [`pki_pembundle_path`](#pki_pembundle_path)
-* [`pki_jks_path`](#pki_jks_path)
-* [`pki_jks_password`](#pki_jks_password)
-* [`pki_jks_cert_alias`](#pki_jks_cert_alias)
-* [`pki_jks_cachain_alias`](#pki_jks_cachain_alias)
-* [`pki_jks_privkey_alias`](#pki_jks_privkey_alias)
-* [`pki_pkcs12_path`](#pki_pkcs12_path)
-* [`pki_pkcs12_umask`](#pki_pkcs12_umask)
-* [`pki_pkcs12_password`](#pki_pkcs12_password)
+* [`ensure`](#-vaultbot--bundle--ensure)
+* [`bundle_name`](#-vaultbot--bundle--bundle_name)
+* [`logfile`](#-vaultbot--bundle--logfile)
+* [`renew_hook`](#-vaultbot--bundle--renew_hook)
+* [`auto_confirm`](#-vaultbot--bundle--auto_confirm)
+* [`vault_addr`](#-vaultbot--bundle--vault_addr)
+* [`vault_cacert`](#-vaultbot--bundle--vault_cacert)
+* [`vault_capath`](#-vaultbot--bundle--vault_capath)
+* [`vault_client_cert`](#-vaultbot--bundle--vault_client_cert)
+* [`vault_client_key`](#-vaultbot--bundle--vault_client_key)
+* [`vault_client_timeout`](#-vaultbot--bundle--vault_client_timeout)
+* [`vault_skip_verify`](#-vaultbot--bundle--vault_skip_verify)
+* [`vault_tls_server_name`](#-vaultbot--bundle--vault_tls_server_name)
+* [`vault_max_retries`](#-vaultbot--bundle--vault_max_retries)
+* [`vault_token`](#-vaultbot--bundle--vault_token)
+* [`vault_renew_token`](#-vaultbot--bundle--vault_renew_token)
+* [`vault_auth_method`](#-vaultbot--bundle--vault_auth_method)
+* [`vault_certificate_role`](#-vaultbot--bundle--vault_certificate_role)
+* [`vault_aws_auth_role`](#-vaultbot--bundle--vault_aws_auth_role)
+* [`vault_aws_auth_mount`](#-vaultbot--bundle--vault_aws_auth_mount)
+* [`vault_aws_auth_header`](#-vaultbot--bundle--vault_aws_auth_header)
+* [`vault_aws_auth_nonce`](#-vaultbot--bundle--vault_aws_auth_nonce)
+* [`vault_aws_auth_nonce_path`](#-vaultbot--bundle--vault_aws_auth_nonce_path)
+* [`vault_gcp_auth_role`](#-vaultbot--bundle--vault_gcp_auth_role)
+* [`vault_gcp_auth_service_account_email`](#-vaultbot--bundle--vault_gcp_auth_service_account_email)
+* [`vault_gcp_auth_mount`](#-vaultbot--bundle--vault_gcp_auth_mount)
+* [`vault_app_role_mount`](#-vaultbot--bundle--vault_app_role_mount)
+* [`vault_app_role_role_id`](#-vaultbot--bundle--vault_app_role_role_id)
+* [`vault_app_role_secret_id`](#-vaultbot--bundle--vault_app_role_secret_id)
+* [`pki_mount`](#-vaultbot--bundle--pki_mount)
+* [`pki_role_name`](#-vaultbot--bundle--pki_role_name)
+* [`pki_common_name`](#-vaultbot--bundle--pki_common_name)
+* [`pki_alt_names`](#-vaultbot--bundle--pki_alt_names)
+* [`pki_ip_sans`](#-vaultbot--bundle--pki_ip_sans)
+* [`pki_ttl`](#-vaultbot--bundle--pki_ttl)
+* [`pki_exclude_cn_from_sans`](#-vaultbot--bundle--pki_exclude_cn_from_sans)
+* [`pki_private_key_format`](#-vaultbot--bundle--pki_private_key_format)
+* [`pki_renew_percent`](#-vaultbot--bundle--pki_renew_percent)
+* [`pki_renew_time`](#-vaultbot--bundle--pki_renew_time)
+* [`pki_force_renew`](#-vaultbot--bundle--pki_force_renew)
+* [`pki_cert_path`](#-vaultbot--bundle--pki_cert_path)
+* [`pki_cachain_path`](#-vaultbot--bundle--pki_cachain_path)
+* [`pki_privkey_path`](#-vaultbot--bundle--pki_privkey_path)
+* [`pki_pembundle_path`](#-vaultbot--bundle--pki_pembundle_path)
+* [`pki_jks_path`](#-vaultbot--bundle--pki_jks_path)
+* [`pki_jks_password`](#-vaultbot--bundle--pki_jks_password)
+* [`pki_jks_cert_alias`](#-vaultbot--bundle--pki_jks_cert_alias)
+* [`pki_jks_cachain_alias`](#-vaultbot--bundle--pki_jks_cachain_alias)
+* [`pki_jks_privkey_alias`](#-vaultbot--bundle--pki_jks_privkey_alias)
+* [`pki_pkcs12_path`](#-vaultbot--bundle--pki_pkcs12_path)
+* [`pki_pkcs12_umask`](#-vaultbot--bundle--pki_pkcs12_umask)
+* [`pki_pkcs12_password`](#-vaultbot--bundle--pki_pkcs12_password)
 
-##### <a name="ensure"></a>`ensure`
+##### <a name="-vaultbot--bundle--ensure"></a>`ensure`
 
 Data type: `Enum['absent','present']`
 
@@ -601,7 +601,7 @@ This specifies whether to create the bundle. Should be one of [present, absent].
 
 Default value: `'present'`
 
-##### <a name="bundle_name"></a>`bundle_name`
+##### <a name="-vaultbot--bundle--bundle_name"></a>`bundle_name`
 
 Data type: `String[1]`
 
@@ -609,407 +609,407 @@ This sets the certificate bundle name.
 
 Default value: `$title`
 
-##### <a name="logfile"></a>`logfile`
+##### <a name="-vaultbot--bundle--logfile"></a>`logfile`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to the vaultbot logfile.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="renew_hook"></a>`renew_hook`
+##### <a name="-vaultbot--bundle--renew_hook"></a>`renew_hook`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Command to execute after certificate has been updated.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="auto_confirm"></a>`auto_confirm`
+##### <a name="-vaultbot--bundle--auto_confirm"></a>`auto_confirm`
 
 Data type: `Optional[Boolean]`
 
 If set to `true`, user prompts will be auto confirmed with yes.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_addr"></a>`vault_addr`
+##### <a name="-vaultbot--bundle--vault_addr"></a>`vault_addr`
 
 Data type: `Optional[String[1]]`
 
 The address of the Vault server expressed as a URL and port.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_cacert"></a>`vault_cacert`
+##### <a name="-vaultbot--bundle--vault_cacert"></a>`vault_cacert`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to a PEM-encoded CA cert file to use to verify the Vault server SSL certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_capath"></a>`vault_capath`
+##### <a name="-vaultbot--bundle--vault_capath"></a>`vault_capath`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to a directory of PEM-encoded CA cert files to verify the Vault server SSL certificate. If `vault_cacert` is specified,
 its value will take precedence.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_client_cert"></a>`vault_client_cert`
+##### <a name="-vaultbot--bundle--vault_client_cert"></a>`vault_client_cert`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to a PEM-encoded client certificate for TLS authentication to the Vault server.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_client_key"></a>`vault_client_key`
+##### <a name="-vaultbot--bundle--vault_client_key"></a>`vault_client_key`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to an unencrypted PEM-encoded private key matching the client certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_client_timeout"></a>`vault_client_timeout`
+##### <a name="-vaultbot--bundle--vault_client_timeout"></a>`vault_client_timeout`
 
 Data type: `Optional[Integer[0]]`
 
 Timeout variable for the vault client.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_skip_verify"></a>`vault_skip_verify`
+##### <a name="-vaultbot--bundle--vault_skip_verify"></a>`vault_skip_verify`
 
 Data type: `Optional[Boolean]`
 
 If set to `true`, do not verify Vault's presented certificate before communicating with it. Setting this variable is not
 recommended except during testing.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_tls_server_name"></a>`vault_tls_server_name`
+##### <a name="-vaultbot--bundle--vault_tls_server_name"></a>`vault_tls_server_name`
 
 Data type: `Optional[String]`
 
 If set, use the given name as the SNI host when connecting via TLS.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_max_retries"></a>`vault_max_retries`
+##### <a name="-vaultbot--bundle--vault_max_retries"></a>`vault_max_retries`
 
 Data type: `Optional[Integer[0]]`
 
 The maximum number of retries when a 5xx error code is encountered.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_token"></a>`vault_token`
+##### <a name="-vaultbot--bundle--vault_token"></a>`vault_token`
 
 Data type: `Optional[String[1]]`
 
 The Vault authentication token.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_renew_token"></a>`vault_renew_token`
+##### <a name="-vaultbot--bundle--vault_renew_token"></a>`vault_renew_token`
 
 Data type: `Optional[Boolean]`
 
 If set to `true`, vaultbot tries to automatically renew the current token.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_auth_method"></a>`vault_auth_method`
+##### <a name="-vaultbot--bundle--vault_auth_method"></a>`vault_auth_method`
 
 Data type: `Optional[Enum['agent','cert','approle','token','aws-iam','aws-ec2','gcp-gce','gcp-iam']]`
 
 The method used to authenticate to vault. Should be one of [agent, cert, approle, token, aws-iam, aws-ec2, gcp-gce, gcp-iam].
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_certificate_role"></a>`vault_certificate_role`
+##### <a name="-vaultbot--bundle--vault_certificate_role"></a>`vault_certificate_role`
 
 Data type: `Optional[String[1]]`
 
 The certificate role to authenticate against, when using the cert auth method.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_aws_auth_role"></a>`vault_aws_auth_role`
+##### <a name="-vaultbot--bundle--vault_aws_auth_role"></a>`vault_aws_auth_role`
 
 Data type: `Optional[String[1]]`
 
 The role to use for AWS IAM authentication.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_aws_auth_mount"></a>`vault_aws_auth_mount`
+##### <a name="-vaultbot--bundle--vault_aws_auth_mount"></a>`vault_aws_auth_mount`
 
 Data type: `Optional[String[1]]`
 
 The mount path for the vault AWS auth method (default: aws).
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_aws_auth_header"></a>`vault_aws_auth_header`
+##### <a name="-vaultbot--bundle--vault_aws_auth_header"></a>`vault_aws_auth_header`
 
 Data type: `Optional[String[1]]`
 
 The header to use during vault AWS IAM authentication. If empty no header will be set.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_aws_auth_nonce"></a>`vault_aws_auth_nonce`
+##### <a name="-vaultbot--bundle--vault_aws_auth_nonce"></a>`vault_aws_auth_nonce`
 
 Data type: `Optional[String[1]]`
 
 The nonce to use during vault AWS EC2 authentication.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_aws_auth_nonce_path"></a>`vault_aws_auth_nonce_path`
+##### <a name="-vaultbot--bundle--vault_aws_auth_nonce_path"></a>`vault_aws_auth_nonce_path`
 
 Data type: `Optional[String[1]]`
 
 If set, the nonce that is used during vault AWS EC2 authentication will be written to this path.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_gcp_auth_role"></a>`vault_gcp_auth_role`
+##### <a name="-vaultbot--bundle--vault_gcp_auth_role"></a>`vault_gcp_auth_role`
 
 Data type: `Optional[String[1]]`
 
 The role to use for GCP authentication.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_gcp_auth_service_account_email"></a>`vault_gcp_auth_service_account_email`
+##### <a name="-vaultbot--bundle--vault_gcp_auth_service_account_email"></a>`vault_gcp_auth_service_account_email`
 
 Data type: `Optional[String[1]]`
 
 The service account email to use for GCP IAM authentication.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_gcp_auth_mount"></a>`vault_gcp_auth_mount`
+##### <a name="-vaultbot--bundle--vault_gcp_auth_mount"></a>`vault_gcp_auth_mount`
 
 Data type: `Optional[String[1]]`
 
 The mount path for the vault GCP auth method.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_app_role_mount"></a>`vault_app_role_mount`
+##### <a name="-vaultbot--bundle--vault_app_role_mount"></a>`vault_app_role_mount`
 
 Data type: `Optional[String[1]]`
 
 The mount path for the AppRole backend.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_app_role_role_id"></a>`vault_app_role_role_id`
+##### <a name="-vaultbot--bundle--vault_app_role_role_id"></a>`vault_app_role_role_id`
 
 Data type: `Optional[String[1]]`
 
 RoleID of the AppRole.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="vault_app_role_secret_id"></a>`vault_app_role_secret_id`
+##### <a name="-vaultbot--bundle--vault_app_role_secret_id"></a>`vault_app_role_secret_id`
 
 Data type: `Optional[String[1]]`
 
 SecretID belonging to AppRole.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_mount"></a>`pki_mount`
+##### <a name="-vaultbot--bundle--pki_mount"></a>`pki_mount`
 
 Data type: `Optional[String[1]]`
 
 Specifies the PKI backend mount path.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_role_name"></a>`pki_role_name`
+##### <a name="-vaultbot--bundle--pki_role_name"></a>`pki_role_name`
 
 Data type: `Optional[String[1]]`
 
 Specifies the name of the role to create the certificate against.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_common_name"></a>`pki_common_name`
+##### <a name="-vaultbot--bundle--pki_common_name"></a>`pki_common_name`
 
 Data type: `Optional[String[1]]`
 
 Specifies the requested CN for the certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_alt_names"></a>`pki_alt_names`
+##### <a name="-vaultbot--bundle--pki_alt_names"></a>`pki_alt_names`
 
 Data type: `Optional[Array[String[1]]]`
 
 Array of strings which specifies requested Subject Alternative Names.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_ip_sans"></a>`pki_ip_sans`
+##### <a name="-vaultbot--bundle--pki_ip_sans"></a>`pki_ip_sans`
 
 Data type: `Optional[Array[String[1]]]`
 
 Array of strings which specifies requested IP Subject Alternative Names.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_ttl"></a>`pki_ttl`
+##### <a name="-vaultbot--bundle--pki_ttl"></a>`pki_ttl`
 
 Data type: `Optional[String[1]]`
 
 Specifies requested Time To Live.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_exclude_cn_from_sans"></a>`pki_exclude_cn_from_sans`
+##### <a name="-vaultbot--bundle--pki_exclude_cn_from_sans"></a>`pki_exclude_cn_from_sans`
 
 Data type: `Optional[Boolean]`
 
 If set to `true`, the given `pki_common_name` will not be included in Subject Alternate Names.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_private_key_format"></a>`pki_private_key_format`
+##### <a name="-vaultbot--bundle--pki_private_key_format"></a>`pki_private_key_format`
 
 Data type: `Optional[Enum['der','pkcs8']]`
 
 Specifies the format for marshaling the private key. Should be one of [der, pkcs8].
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_renew_percent"></a>`pki_renew_percent`
+##### <a name="-vaultbot--bundle--pki_renew_percent"></a>`pki_renew_percent`
 
 Data type: `Optional[Float[0.00,1.00]]`
 
 Percentage of requested certificate TTL, which triggers a renewal when passed (>0.00, <1.00).
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_renew_time"></a>`pki_renew_time`
+##### <a name="-vaultbot--bundle--pki_renew_time"></a>`pki_renew_time`
 
 Data type: `Optional[String[1]]`
 
 Time in hours before certificate expiry, which triggers a renewal (e.g. 12h, 1m). Takes precedence over `pki_renew_percent`
 when set.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_force_renew"></a>`pki_force_renew`
+##### <a name="-vaultbot--bundle--pki_force_renew"></a>`pki_force_renew`
 
 Data type: `Optional[Boolean]`
 
 If set to `true`, the certificate will be renewed without checking the expiry.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_cert_path"></a>`pki_cert_path`
+##### <a name="-vaultbot--bundle--pki_cert_path"></a>`pki_cert_path`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to the requested / to be updated certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_cachain_path"></a>`pki_cachain_path`
+##### <a name="-vaultbot--bundle--pki_cachain_path"></a>`pki_cachain_path`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to the CA Chain of the requested / to be updated certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_privkey_path"></a>`pki_privkey_path`
+##### <a name="-vaultbot--bundle--pki_privkey_path"></a>`pki_privkey_path`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to the private key of the requested / to be updated certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_pembundle_path"></a>`pki_pembundle_path`
+##### <a name="-vaultbot--bundle--pki_pembundle_path"></a>`pki_pembundle_path`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to the PEM bundle of the requested / to be updated certificate, private key and ca chain.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_jks_path"></a>`pki_jks_path`
+##### <a name="-vaultbot--bundle--pki_jks_path"></a>`pki_jks_path`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to a JAVA KeyStore where the certificates should be exported.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_jks_password"></a>`pki_jks_password`
+##### <a name="-vaultbot--bundle--pki_jks_password"></a>`pki_jks_password`
 
 Data type: `Optional[Sensitive[String[1]]]`
 
 JAVA KeyStore password.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_jks_cert_alias"></a>`pki_jks_cert_alias`
+##### <a name="-vaultbot--bundle--pki_jks_cert_alias"></a>`pki_jks_cert_alias`
 
 Data type: `Optional[String[1]]`
 
 Alias in the JAVA KeyStore of the requested / to be updated certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_jks_cachain_alias"></a>`pki_jks_cachain_alias`
+##### <a name="-vaultbot--bundle--pki_jks_cachain_alias"></a>`pki_jks_cachain_alias`
 
 Data type: `Optional[String[1]]`
 
 Alias in the JAVA KeyStore of the CA Chain of the requested / to be updated certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_jks_privkey_alias"></a>`pki_jks_privkey_alias`
+##### <a name="-vaultbot--bundle--pki_jks_privkey_alias"></a>`pki_jks_privkey_alias`
 
 Data type: `Optional[String[1]]`
 
 Alias in the JAVA KeyStore of the private key of the requested / to be updated certificate.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_pkcs12_path"></a>`pki_pkcs12_path`
+##### <a name="-vaultbot--bundle--pki_pkcs12_path"></a>`pki_pkcs12_path`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to a PKCS#12 KeyStore where the certificates should be exported to.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_pkcs12_umask"></a>`pki_pkcs12_umask`
+##### <a name="-vaultbot--bundle--pki_pkcs12_umask"></a>`pki_pkcs12_umask`
 
 Data type: `Optional[String[1]]`
 
 File mode of the generated PKCS#12 KeyStore. Existing keystore will keep it's mode. Octal format required (e.g. 0644).
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pki_pkcs12_password"></a>`pki_pkcs12_password`
+##### <a name="-vaultbot--bundle--pki_pkcs12_password"></a>`pki_pkcs12_password`
 
 Data type: `Optional[Sensitive[String[1]]]`
 
 Default password is "ChangeIt", a commonly-used password for PKCS#12 files. Due to the weak encryption used by PKCS#12, it is
 RECOMMENDED that you use the default password when encoding PKCS#12 files, and protect the PKCS#12 files using other means.
 
-Default value: ``undef``
+Default value: `undef`
 
