@@ -20,7 +20,7 @@ describe 'vaultbot class:' do
     end
   end
 
-  version = '1.13.0'
+  version = '1.14.3'
   extract_binary = "/opt/vaultbot/v#{version}/vaultbot"
 
   describe file(extract_binary) do
