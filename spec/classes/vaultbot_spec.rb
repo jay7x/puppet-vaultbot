@@ -9,7 +9,7 @@ describe 'vaultbot' do
       'amd64' => 'amd64',
       'x86_64' => 'amd64',
       'aarch64' => 'arm64',
-    }[os_facts[:architecture]]
+    }[os_facts[:os]['architecture']]
 
     context "on #{os}" do
       let(:facts) { os_facts }
