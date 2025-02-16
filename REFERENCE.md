@@ -107,7 +107,7 @@ Data type: `String[1]`
 
 The vaultbot version to install.
 
-Default value: `'1.13.0'`
+Default value: `'1.14.3'`
 
 ##### <a name="-vaultbot--ensure"></a>`ensure`
 
